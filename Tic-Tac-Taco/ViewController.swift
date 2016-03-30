@@ -17,14 +17,17 @@ class ViewController: UIViewController {
     var winningCombinations = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     var gameActive = true
     var buttonSound: AVAudioPlayer!
+    var endGameSound: AVAudioPlayer!
     
     //Outlets
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var gameOverLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
-   
+    @IBOutlet weak var playerTurnLabel: UILabel!
+    
     @IBAction func buttonPressed(btn: UIButton!) {
         buttonSound.play()
+        updatePlayerTurn()
         
         if (gameState[btn.tag] == 0 && gameActive == true) {
             gameState[btn.tag] = activePlayer
@@ -39,9 +42,9 @@ class ViewController: UIViewController {
                 if (gameState[combination[0]] != 0 && gameState[combination[0]] == gameState[combination[1]] && gameState[combination[1]] == gameState[combination[2]]) {
                     gameActive = false
                     if gameState[combination[0]] == 1 {
-                        gameOverLabel.text = "Taco 1 Wins!!"
+                        gameOverLabel.text = "Player 1 Wins!!"
                     } else {
-                        gameOverLabel.text = "Taco 2 Wins!!"
+                        gameOverLabel.text = "Player 2 Wins!!"
                     }
                     
                         endGame()
@@ -68,15 +71,14 @@ class ViewController: UIViewController {
             gameState = [0,0,0,0,0,0,0,0,0]
             activePlayer = 1
             gameActive = true
-            gameOverLabel.hidden = true
-            gameOverLabel.center = CGPointMake(gameOverLabel.center.x - 500, gameOverLabel.center.y)
-            playAgainButton.hidden = true
-            playAgainButton.center = CGPointMake(playAgainButton.center.x - 500, playAgainButton.center.y)
+        
+            hideLabels()
             var buttonToClear : UIButton
             for i in 0...8 {
                 buttonToClear = view.viewWithTag(i) as! UIButton
                 buttonToClear.setImage(nil, forState: UIControlState.Normal)
             }
+        endGameSound.stop()
     
             
         }
@@ -86,18 +88,41 @@ class ViewController: UIViewController {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.gameOverLabel.center = CGPointMake(self.gameOverLabel.center.x + 500, self.gameOverLabel.center.y)
                 self.playAgainButton.center = CGPointMake(self.playAgainButton.center.x + 500, self.playAgainButton.center.y)
+                let path = NSBundle.mainBundle().pathForResource("applause", ofType: "mp3")
+                let soundURL = NSURL(fileURLWithPath: path!)
                 
+                do {
+                    try self.endGameSound = AVAudioPlayer(contentsOfURL: soundURL)
+                    self.endGameSound.prepareToPlay()
+                } catch let err as NSError {
+                    print(err.debugDescription)
+                }
+                self.endGameSound.play()
+
+
             })
         }
+    //Label tells who's turn it is
+    func updatePlayerTurn() {
+        if activePlayer == 2 {
+            playerTurnLabel.text = "Player 1's Turn"
+        } else {
+            playerTurnLabel.text = "Player 2's Turn"
+        }
+    }
+    
+    func hideLabels() {
+        gameOverLabel.hidden = true
+        gameOverLabel.center = CGPointMake(gameOverLabel.center.x - 500, gameOverLabel.center.y)
+        playAgainButton.hidden = true
+        playAgainButton.center = CGPointMake(playAgainButton.center.x - 500, playAgainButton.center.y)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Animation and Hidden Labels
-        gameOverLabel.hidden = true
-        gameOverLabel.center = CGPointMake(gameOverLabel.center.x - 500, gameOverLabel.center.y)
-        playAgainButton.hidden = true
-        playAgainButton.center = CGPointMake(playAgainButton.center.x - 500, playAgainButton.center.y)
+        hideLabels()
         
         //Sound on button pressed
         let path = NSBundle.mainBundle().pathForResource("pop", ofType: "mp3")

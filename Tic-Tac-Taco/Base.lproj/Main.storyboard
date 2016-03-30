@@ -71,10 +71,10 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fH7-e5-7ke">
+                                    <stackView opaque="NO" tag="10" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fH7-e5-7ke">
                                         <rect key="frame" x="0.0" y="369" width="290" height="81"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click a box to start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-ng-i65">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click a box to start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-ng-i65">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="81"/>
                                                 <fontDescription key="fontDescription" name="LHFSaddleRegular" family="LHF Saddle Regular" pointSize="44"/>
                                                 <color key="textColor" red="0.1803921568627451" green="0.12156862745098039" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,6 +283,7 @@
                         <outlet property="button" destination="K1S-6C-q36" id="Vjs-Kr-SLe"/>
                         <outlet property="gameOverLabel" destination="5sn-7h-Nab" id="AyO-H4-za4"/>
                         <outlet property="playAgainButton" destination="gPV-kS-Uro" id="7tL-n1-JYW"/>
+                        <outlet property="playerTurnLabel" destination="Gkt-ng-i65" id="L1j-Tm-APZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@
 		1D2F390C1CAB0DC4007288FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2F390A1CAB0DC4007288FF /* LaunchScreen.storyboard */; };
 		1D2F39141CAB0E74007288FF /* LHFsaddleregular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1D2F39131CAB0E74007288FF /* LHFsaddleregular.otf */; };
 		1D2F39161CAB5204007288FF /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D2F39151CAB5204007288FF /* pop.mp3 */; };
+		1DDF3D051CAB8B5D0017C780 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DDF3D041CAB8B5D0017C780 /* applause.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1D2F390D1CAB0DC4007288FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2F39131CAB0E74007288FF /* LHFsaddleregular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LHFsaddleregular.otf; sourceTree = "<group>"; };
 		1D2F39151CAB5204007288FF /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
+		1DDF3D041CAB8B5D0017C780 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				1D2F39011CAB0DC4007288FF /* AppDelegate.swift */,
 				1D2F39031CAB0DC4007288FF /* ViewController.swift */,
 				1D2F39051CAB0DC4007288FF /* Main.storyboard */,
+				1DDF3D041CAB8B5D0017C780 /* applause.mp3 */,
 				1D2F39151CAB5204007288FF /* pop.mp3 */,
 				1D2F39081CAB0DC4007288FF /* Assets.xcassets */,
 				1D2F390A1CAB0DC4007288FF /* LaunchScreen.storyboard */,
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDF3D051CAB8B5D0017C780 /* applause.mp3 in Resources */,
 				1D2F39141CAB0E74007288FF /* LHFsaddleregular.otf in Resources */,
 				1D2F390C1CAB0DC4007288FF /* LaunchScreen.storyboard in Resources */,
 				1D2F39091CAB0DC4007288FF /* Assets.xcassets in Resources */,
@@ -295,6 +299,7 @@
 				1D2F39121CAB0DC4007288FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
